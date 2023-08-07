@@ -15,7 +15,7 @@ async function fetchAllProductsData() {
   return res.json();
 }
 export default async function Home() {
-  let response = await fetchAllProductsData();
+  let { response }= await fetchAllProductsData();
   // console.log("res:",response)
   return (
    <div>

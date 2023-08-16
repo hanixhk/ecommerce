@@ -4,7 +4,7 @@ import React, { FC } from 'react'
 
 const  ProductCarousel = ({ProductData}:any) => {
   return (
-    <div>Product C</div>
+    <div>{ProductData[0].productName}</div>
   )
 }
 

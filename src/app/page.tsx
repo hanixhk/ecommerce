@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Hero from '../components/views/Hero'
 import ProductsType from '@/components/views/Product Types'
-import BASE_PATH_FORAPI from '@/components/shared/BasePath';
+// import BASE_PATH_FORAPI from '@/components/shared/BasePath';
 import ProductCarousel from '@/components/views/ProductCarousel';
 import { responseType } from '@/components/utils/ProductsDataArrayAndType';
 async function fetchAllProductsData() {

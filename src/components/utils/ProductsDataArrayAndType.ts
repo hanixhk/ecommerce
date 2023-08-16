@@ -22,7 +22,7 @@ export interface oneProductType {
     _type: string,
     productName: string,
     _createdAt: string,
-    _id: string,
+    _id: any,
     _updatedAt: string,
     image: Array<imagesType>
     description: any,

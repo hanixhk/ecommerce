@@ -1,6 +1,11 @@
-const ProductCarousel = ({ProductData}:any) => {
+"use client"
+import { oneProductType } from '@/components/utils/ProductsDataArrayAndType'
+import React, { FC } from 'react'
+
+const  ProductCarousel = ({ProductData}:any) => {
   return (
-    <div>{ProductData[0].productName}</div>
+    <div>Product C</div>
   )
 }
-export default ProductCarousel
+
+export default  ProductCarousel

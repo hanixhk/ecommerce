@@ -9,11 +9,11 @@ interface propsType {
     productArray: Array<oneProductType>
 }
 
-export default class AllProductsCompo extends Component<{ ProdutcData: propsType }> {
+export default class AllProductsCompo extends Component<{ ProdutctData: propsType }> {
     start: number = 10;
     end: number = 20;
     state: { items: Array<oneProductType>, hasMore: boolean } = {
-        items: [...this.props.ProdutcData.productArray],
+        items: [...this.props.ProdutctData.productArray],
         hasMore: true,
     }
     fetchDataFromApiGradually = async (start: number, end: number) => {
@@ -26,18 +26,20 @@ export default class AllProductsCompo extends Component<{ ProdutcData: propsType
     }
     getData = async () => {
         let allTogether = await this.fetchDataFromApiGradually(this.start, this.end);
-        if (allTogether.productArray !== "Not found") {
+        if (allTogether !== "Not found") { // Update this line
             this.setState({
-                items: this.state.items.concat(allTogether.productArray)
-            })
+                items: this.state.items.concat(allTogether) // Update this line
+            });
         } else {
             this.setState({
                 hasMore: false
-            })
+            });
         }
         this.start = this.start + 10;
         this.end = this.end + 10;
     }
+    
+
     render() {
         return (
             <InfiniteScroll 

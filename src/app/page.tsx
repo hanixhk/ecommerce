@@ -4,6 +4,8 @@ import ProductsType from '@/components/views/Product Types'
  import BASE_PATH_FORAPI from '@/components/shared/BasePath'
 import ProductCarousel from '@/components/views/ProductCarousel';
 import { responseType ,oneProductType} from '@/components/utils/ProductsDataArrayAndType';
+import Jewellery from '@/components/views/Jewellery';
+import Newslatter from '@/components/views/Newslatter';
 async function fetchAllProductsData() {
   let res = await fetch(`https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/production?query=*[_type == "products"]`); 
   if (!res.ok) {
@@ -16,9 +18,11 @@ export default async function Home() {
   return (
    <div>
     
-    {/* <Hero />  */}
-     {/* <ProductsType/> */}
+    <Hero /> 
+     <ProductsType/>
     <ProductCarousel ProductData={result} />
+    <Jewellery />
+    <Newslatter/>
    </div>
     )
 }

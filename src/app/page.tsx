@@ -7,8 +7,12 @@ import { responseType ,oneProductType} from '@/components/utils/ProductsDataArra
 import Jewellery from '@/components/views/Jewellery';
 import Newslatter from '@/components/views/Newslatter';
 async function fetchAllProductsData() {
-  let res = await fetch(`https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/production?query=*[_type == "products"]`); 
-  if (!res.ok) {
+  let res = await fetch(`https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/production?query=*[_type == "products"]`, {
+    next: {
+      revalidate: 60
+    }
+  });
+    if (!res.ok) {
     throw new Error("Failed to fetch")
   }
   return res.json();

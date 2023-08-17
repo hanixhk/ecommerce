@@ -1,21 +1,27 @@
-import  ImageUrlBuilder  from "@sanity/image-url";
-import { FC } from "react";
-import { oneProductType } from "../utils/ProductsDataArrayAndType";
-import { client } from "../../../sanity/lib/client";
-
-const builder =ImageUrlBuilder(client);
-
+import {FC} from 'react'
+import { oneProductType } from '../utils/ProductsDataArrayAndType'
+import Image from 'next/image'
+import imageUrlBuilder from '@sanity/image-url'
+import { client } from '../../../sanity/lib/client';
+import Link from 'next/link';
+const builder = imageUrlBuilder(client);
 
 const Card:FC<{singleProductData:oneProductType}> = ({singleProductData}) => {
-  function urlFor(source:any){
+  function urlFor(source: any) {
     return builder.image(source)
   }
-  console.log(urlFor(singleProductData.image[0]).width(500).url())
-  return (
-    <div className="border-4">
-      <div>
-        
-      </div>
+    return (
+      <div className='max-w-sm min-w-[24rem] space-y-3 select-none hover:scale-110 duration-300'>
+            <div className='relative w-full'>
+                <div className='absolute inset-0 z-10' />
+      <Image width={500} height={500} src={urlFor(singleProductData.image[0]).width(1000).height(1000).url()} alt={singleProductData.image[0].alt} />
+    </div>
+    <div className='space-y-1 text-gray-600 font-semibold text-lg select-none'>
+    <Link href={`/catalog/${singleProductData.slug.current}`}>
+                    <h6>{singleProductData.productName}</h6>
+                    <p>${singleProductData.price}</p>
+                </Link>
+    </div>
     </div>
   )
 }

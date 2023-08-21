@@ -1,72 +1,69 @@
 export interface NavbarItemType {
     label: string,
-    href:string,
-    isDropDown:boolean,
-    dropDowndata?:Array<NavbarItemType>,
+    href: string,
+    isDropDown: boolean,
+    dropDownData?: Array<NavbarItemType>,
 };
 
-export const NavbarArray:Array<NavbarItemType>=[
+
+export const NavbarArray: Array<NavbarItemType> = [
     {
-        label:"Female",
-        href: "/female",
-        isDropDown:true,
-        dropDowndata:[
+        label: "Female",
+        href: "/female/Female",
+        isDropDown: true,
+        dropDownData: [
             {
-            label:"Dresses",
-            href:"/female/dresses",
-            isDropDown:false,
-
-        },
+                label: "Dresses",
+                href: "/female/Dresse",
+                isDropDown: false,
+            },
             {
-            label:"T-Shirts",
-            href:"/female/t-Shirts",
-            isDropDown:false,
-
-        },
+                label: "T-Shirts",
+                href: "/female/T-shirt",
+                isDropDown: false,
+            },
             {
-            label:"Pents",
-            href:"/female/pents",
-            isDropDown:false,
-
-        },
+                label: "Pents",
+                href: "/female/Pant",
+                isDropDown: false,
+            },
             {
-            label:"Jackets",
-            href:"/female/Jackets",
-            isDropDown:false,
-        },
-        {
-            label:"Sweaters",
-            href:"/female/sweater",
-            isDropDown:false,
-        },
+                label: "Jackets",
+                href: "/female/Jacket",
+                isDropDown: false,
+            },
+            {
+                label: "Sweater",
+                href: "/female/Sweater",
+                isDropDown: false,
+            },
         ]
     },
     {
-        label:"Male",
-        href:"/Male",
-        isDropDown:true,
-        dropDowndata:[
+        label: "Male",
+        href: "/male/Male",
+        isDropDown: true,
+        dropDownData: [
             {
-            label:"Sweaters",
-            href:"/male/sweater",
-            isDropDown:false,
-        },
-           {
-            label:"Jackets",
-            href:"/male/Jackets",
-            isDropDown:false,
-        },
+                label: "Sweaters",
+                href: "/male/Sweater",
+                isDropDown: false,
+            },
+            {
+                label: "Jackets",
+                href: "/male/Jacket",
+                isDropDown: false,
+            },
         ]
     },
     {
-        label:"Kids",
-        href:"/kids",
-        isDropDown:false,
+        label: "Kids",
+        href: "/kid",
+        isDropDown: false,
     },
     {
-        label:"All products",
-        href:"/All products",
-        isDropDown:false,
+        label: "All Products",
+        href: "/products",
+        isDropDown: false,
     },
-    
-]
+];

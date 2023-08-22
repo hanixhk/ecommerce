@@ -10,9 +10,20 @@ import Image from "next/image"
 import Link from "next/link"
 import DropDown from "./subcomponents/DropDown"
 import Expand from "./subcomponents/Expand"
+import { useRouter } from "next/navigation"
+
 const Navbar = () => {
+    const router = useRouter();
     const [isNavbaropen,setNavbarOpen]=useState<boolean>(false);
     const [cartItemNumber , setcartItemNumber] = useState<number>(0);
+    const [searchQuery, setSearchQuery] = useState("");
+
+
+    function handleSerachCalledFunc(e: any) {
+        if (e.key === "Enter" && e.keyCode === 13) {
+            router.push(`/search/${searchQuery}`);
+        }
+    }
   return (
     <div className=" top-0 backdrop-blur-lg bg-gradient-to-tr from-white via-[#ffffffde] to-opacityDownColor z-20">
     <div className="py-5 flex justify-between items-center gap-8">
@@ -32,11 +43,14 @@ const Navbar = () => {
             ))}
             </ul>
             <div className="border flex items-center text-gray-600 px-3 rounded-md">
-                <BiSearch />
+            <Link href={`/search/${searchQuery}`}><BiSearch /></Link>
                 <input
-                 type="text"
-                 className="focus:outline-none pl-1 pr-5 py-1 w-80 "
-                 placeholder="Search in our store" />
+                   type="text"
+                   value={searchQuery}
+                   onKeyDown={handleSerachCalledFunc}
+                   onChange={(e) => setSearchQuery(e.target.value)}
+                   className="focus:outline-none pl-1 pr-5 py-1 w-80 rounded-r-md"
+                   placeholder="Search in Our Store"/>
             </div>
             <div className="flex-shrink-0 relative w-11 h-11 bg-gray-300 rounded-full flex items-center justify-center">
                 <div className="w-4 h-4 absolute top-1 right-2 bg-red-400 text-xs font-light rounded-full flex justify-center items-center">

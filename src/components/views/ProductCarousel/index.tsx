@@ -58,10 +58,10 @@ const  ProductCarousel:FC<{ProductData:Array<oneProductType>}>= ({ProductData}) 
         onTouchEnd={mouseUp}
       
     >
-        {dataToItrate.map((item: oneProductType, index: number) => (
-          <Card key={index + 4} singleProductData={item} />
-      ))}
-    {/* <div className='flex'>{ProductData.map((item:oneProductType, index:number)=>
+       {dataToItrate.map((item: oneProductType, index: number) => (
+                    <Card key={index + 4} singleProductData={item} />
+                ))}
+    {/* <div className='flex'>{ProductData((item:oneProductType, index:number)=>
       // eslint-disable-next-line react/jsx-key
       <Card singleProductData={item}/>
       )} */}

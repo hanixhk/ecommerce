@@ -67,15 +67,14 @@ export default Navbar
 
 const MobileNavbar = () => {
     return (
-    <div className="w-full px-6 py-4 bg-gray-100">
-    { 
-    NavbarArray((item: NavbarItemType, index: number) => {
-        return (
-        < Expand key={index} item={item} />
-        )
-    })
-}
-      </div> 
+        <div className="w-full px-6 py-4 bg-gray-100">
+            {
+                NavbarArray.map((item: NavbarItemType, index: number) => {
+                    return (
+                        <Expand key={index} item={item} />
+                    )
+                })
+            }
+        </div>
     )
 }
-

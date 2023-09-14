@@ -1,5 +1,4 @@
 import { oneProductType, responseType } from '@/components/utils/ProductsDataArrayAndType';
-import Card from '@/components/views/Card';
 import CardAll from '@/components/views/CardAll';
 import React from 'react'
 

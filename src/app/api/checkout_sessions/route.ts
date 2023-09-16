@@ -1,67 +1,75 @@
 import Stripe from "stripe"
 import { NextRequest, NextResponse } from "next/server";
 import { oneProductType } from "@/components/utils/ProductsDataArrayAndType";
-
-
-interface typeOfData {
+ interface typeOfData {
     price: string,
     name: string,
     quantity: number,
 }
 
-let orignalData: Array<typeOfData> = [
-    {
-        price: 'price_1NLM6oGWv7lYUltJ5GnDYwfO',
-        name: 'Pink Fleece Sweatpants',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLM8bGWv7lYUltJS8C3UtWh',
-        name: 'Brushed Raglan Sweatshirt',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMBFGWv7lYUltJUgbOCM7F',
-        name: 'Cameryn Sash Tie Dress',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMK3GWv7lYUltJOAdEdaDA',
-        name: 'Imperial Alpaca Hoodie',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMM8GWv7lYUltJnKC8hHsJ',
-        name: 'Kids One',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMO2GWv7lYUltJSuKwqJ5r',
-        name: 'Imperial Alpaca Hoodie Woman',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMPgGWv7lYUltJ3B1ST39E',
-        name: 'Flex Sweatpants',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLMR4GWv7lYUltJInH1xRm9',
-        name: 'Lite Sweatpants',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLOOiGWv7lYUltJawy9Sxy7',
-        name: 'Raglan Sweatshirt',
-        quantity: 1,
-    },
-    {
-        price: 'price_1NLOQ0GWv7lYUltJzyBK3ZyP',
-        name: 'Flex Push Button Bomber',
-        quantity: 1,
-    },
-]
-
+ let orignalData: Array<typeOfData> = [
+        {
+            price: 'price_1Nr3WwBP3qyxnuZ6xUVbV6xd',
+            name: 'flex SweatShirt',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqOE4BP3qyxnuZ6RE5g0iHv',
+            name: 'Muscle Tank',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqOBPBP3qyxnuZ6Xyv7JTqC',
+            name: 'Brushed Bomber',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqO8uBP3qyxnuZ6Fa6hHpzj',
+            name: 'Brushed Raglan Sweatshirt',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqOAqBP3qyxnuZ6aN1MatGz',
+            name: 'Cameryn Sash Tie Dress',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqO6NBP3qyxnuZ6yPkv0lx9',
+            name: 'Pink Fleece SweatPants',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqNygBP3qyxnuZ6vRjjOko6',
+            name: 'Kids One',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqOCIBP3qyxnuZ6FqEmBxoU',
+            name: 'Imperial Alpaca Hoodie',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqO0cBP3qyxnuZ6BSN5jykC',
+            name: 'Flex Sweatpants',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqNxWBP3qyxnuZ6TJaCDmu2',
+            name: 'Lite Sweatpants',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqNw2BP3qyxnuZ6vCz8ITwe',
+            name: 'Raglan Sweatshirt',
+            quantity: 1,
+        },
+        {
+            price: 'price_1NqO4yBP3qyxnuZ6evoxxRBH',
+            name: 'Flex Push Button Bomber',
+            quantity: 1,
+        },
+    ]
+  
 // @ts-ignore
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 

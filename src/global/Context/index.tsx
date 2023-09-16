@@ -81,17 +81,6 @@ const ContextWrapper = ({ children }: { children: ReactNode }) => {
         }
     };
 
-
-
-
-
-
-
-
-
-
-
-
     let user = auth.currentUser;
 
     useEffect(() => {

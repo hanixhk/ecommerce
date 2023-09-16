@@ -2,14 +2,12 @@
 "use client"
 import { oneProductType } from "@/components/utils/ProductsDataArrayAndType"
 import Image from "next/image"
-import { FC, useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { RiDeleteBin6Line } from "react-icons/ri"
-import AllProductsCompo from "../../AllProduct"
 import { client } from "../../../../../sanity/lib/client"
 import imageUrlBuilder from '@sanity/image-url'
 import toast, { Toaster } from "react-hot-toast"
 import { useRouter } from "next/navigation"
-import BASE_PATH_FORAPI from "@/components/shared/BasePath"
 import { cartContext } from "@/global/Context"
 import LoadingComp from "@/components/shared/LoadingComp"
 
@@ -94,7 +92,7 @@ const CartComp = ({ allProductsOfStore }: { allProductsOfStore: Array<oneProduct
         });
 
         if (stableQuantity - 1 <= 0) {
-            notificationError("Did not accept lower than 1 please press on the delete icon to remove product from cart")
+            notificationError("Did not accept lower than 1 please press on the delete icon to remove product from cart Thank You!")
             
         } else {
             await dispatch("updateCart", {
@@ -192,7 +190,7 @@ const CartComp = ({ allProductsOfStore }: { allProductsOfStore: Array<oneProduct
                         )
                     }) :
                         !userData ? (
-                            <div className="text-center font-semibold text-gray-800 text-xl">Please  First</div>
+                            <div className="text-center font-semibold text-gray-800 text-xl">Please First Login and Add Product! </div>
                         ) :
                             arrayForLoading.map((index: number) => (
                                 <div key={index} className="border border-blue-300 shadow rounded-md p-4 w-full mx-auto">

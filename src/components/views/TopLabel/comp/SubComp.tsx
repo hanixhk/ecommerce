@@ -3,6 +3,8 @@ import Image from "next/image"
 import { cartContext } from "@/global/Context"
 import { useContext, useState } from "react"
 import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignInAlt, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 
 const SubComp = () => {
     let { userData, LogOut, sendEmailVerificationCode, updateUserNamePhoto, loading } = useContext(cartContext)
@@ -29,10 +31,23 @@ const SubComp = () => {
                     }
                 </div>
                 :
-                <div className="flex gap-2">
-                    <Link href="/signup" className="hidden md:flex text-white bg-gray-900 px-3 py-1">SignUp</Link>
-                    <Link href="/signin" className=" text-white border border-purple-800 px-3 py-1 mr-10 md:mr-0">SignIn</Link>
-                </div>
+                <div className="flex flex-col md:flex-row">
+                <Link
+                  href="/signin"
+                  className="text-white border border-purple-800 px-1 py-1 text-xs md:mr-2 md:mb-0 flex items-center"
+                >
+                  <FontAwesomeIcon icon={faSignInAlt} className="mr-2 hidden md:block" />
+                  Sign In
+                </Link>
+                <Link
+                  href="/signup"
+                  className="text-white border border-purple-800 px-1 py-1 text-xs md:mr-0 mt-2 md:mt-0 flex items-center"
+                >
+                  <FontAwesomeIcon icon={faUserPlus} className="mr-2 hidden md:block" />
+                  Sign Up
+                </Link>
+              </div>
+              
             }
 
             <div className={`${isSideProfileOpen ? "visible translate-y-0" : "invisible -translate-y-full"} duration-500 py-4 px-4 w-72 md:w-80 bg-gray-800 h-full text-gray-100 absolute right-0 top-0 bottom-0 z-50`}>
